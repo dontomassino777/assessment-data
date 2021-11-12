@@ -10,3 +10,17 @@ def sales_reports(log_file): #creates a function called 'sales_reports' that tak
 
 
 sales_reports(log_file) #calls the function 'sales_reports' with 'log_file' passed as argument
+log_file.seek(0)
+
+
+def orders_over_ten(log_file):
+    for line in log_file:
+        line = line.split(" ") 
+        qty = int(line[2])
+        if qty > 10:
+            print(" ".join(line))
+               
+orders_over_ten(log_file)
+
+log_file.close()
+
